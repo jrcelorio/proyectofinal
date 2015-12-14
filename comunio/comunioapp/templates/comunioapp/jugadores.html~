@@ -1,0 +1,10 @@
+<html>
+	<head>
+		<title>Jugadores</title>
+	</head>
+	<body>
+		<h1>{{jugadores.nombre}}</h1>
+		<p>{{jugadores.edad}}</p>
+		<a href="{% url 'indice' %}">Volver</a>			
+	</body>
+</html>

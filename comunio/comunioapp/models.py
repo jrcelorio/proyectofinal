@@ -12,6 +12,7 @@ class Equipo(models.Model):
 class Jugadores(models.Model):
 	nombre = models.CharField(max_length=30)
 	edad = models.IntegerField(null=True)
+	equipo = models.ForeignKey('Equipo',null=True)
 	
 	def __str__(self):
 		return '%s' % (self.nombre)

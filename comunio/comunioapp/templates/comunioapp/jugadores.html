@@ -1,0 +1,13 @@
+<html>
+	<head>
+		<title>Jugadores</title>
+	</head>
+	<body>
+		<ul>
+			{% for jugador in lista_jugadores %}
+				<li>{{ jugador.nombre }}</li>
+			{% endfor %}
+		</ul>
+		<a href="{% url 'indice' %}">Volver</a>			
+	</body>
+</html>

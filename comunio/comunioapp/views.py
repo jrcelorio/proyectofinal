@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404,render
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponseRedirect
-from comunioapp.models import Equipo
+from comunioapp.models import Equipo,Jugadores
 from comunioapp.forms import ComunioForm
 
 
@@ -39,4 +39,8 @@ def loginpage(request):
 def logoutpage(request):
 	logout(request)
 	return HttpResponseRedirect("/")
+
+def jugadores(request,equipo_id):
+	lista_jugadores = Jugadores.objects.filter(equipo=equipo_id)
+	return render(request, 'comunioapp/jugadores.html', {'lista_jugadores': lista_jugadores })
 

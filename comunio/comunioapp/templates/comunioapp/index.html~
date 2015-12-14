@@ -20,8 +20,14 @@
 			<table border="2">
 				<tr>
 					<td>Nombre</td>
-					<td>Descripcion</td>
+					<td>Estadio</td>
 				</tr>
+				{% for equipo in lista_equipos %}
+					<tr>
+						<td><a href="{% url 'jugadores' equipo.id %}">{{ equipo.nombre }}</a></td>
+						<td>{{ equipo.descripcion }}</td>
+					</tr>
+				{% endfor %}
 			</table>
 		{% else %}
 			<p>No hay equipos</p>			
