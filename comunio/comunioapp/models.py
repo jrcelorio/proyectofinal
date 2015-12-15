@@ -5,6 +5,7 @@ from django.db import models
 class Equipo(models.Model):
 	nombre = models.CharField(max_length=30)
 	descripcion = models.TextField()
+	foto = models.ImageField(upload_to='comunioapp/static/media',null=True)
 
 	def __str__(self):
 		return '%s' % (self.nombre)

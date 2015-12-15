@@ -25,7 +25,7 @@
 				{% for equipo in lista_equipos %}
 					<tr>
 						<td><a href="{% url 'jugadores' equipo.id %}">{{ equipo.nombre }}</a></td>
-						<td>{{ equipo.descripcion }}</td>
+						<td><a href="{% url 'estadios' equipo.id %}">{{ equipo.descripcion }}</a></td>
 					</tr>
 				{% endfor %}
 			</table>

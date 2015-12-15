@@ -4,7 +4,7 @@ from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponseRedirect
 from comunioapp.models import Equipo,Jugadores
 from comunioapp.forms import ComunioForm
-
+from django.shortcuts import get_object_or_404,render
 
 # Create your views here.
 
@@ -44,3 +44,6 @@ def jugadores(request,equipo_id):
 	lista_jugadores = Jugadores.objects.filter(equipo=equipo_id)
 	return render(request, 'comunioapp/jugadores.html', {'lista_jugadores': lista_jugadores })
 
+def estadios(request,equipo_id):
+	equipo = get_object_or_404(Equipo, pk = equipo_id)
+	return render(request, 'comunioapp/estadios.html', {'equipo': equipo })
